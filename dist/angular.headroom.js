@@ -4,7 +4,11 @@
  * License: MIT
  */
 
-(function(angular) {
+(function(root, factory) {
+  if (typeof module !== 'undefined' && module.exports) {
+    module.exports = factory(require('./headroom.js'));
+  }
+}(this, function ngHeadroom(Headroom) {
 
   if (!angular) {
     return;
@@ -49,4 +53,4 @@
     };
   });
 
-}(window.angular));
+}));
